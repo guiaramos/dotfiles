@@ -4,6 +4,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export LANG="en_US.UTF-8"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="true"

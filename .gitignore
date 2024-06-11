@@ -8,7 +8,7 @@
 !.config/alacritty/alacritty.toml
 !README.md
 !images/*
+
 !.gitconfig
 !.zshrc
-node_modules/
-.DS_Store
+
