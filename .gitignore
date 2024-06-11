@@ -3,6 +3,7 @@
 !.gitignore
 !.gitconfig
 !.zshrc
+!brew-apps.txt
 
 !.config/nvim/**/*
 !.config/nvim/lua/config/plugins/**/*

@@ -1,0 +1,17 @@
+eza
+fzf
+neovim
+tmux
+lazygit
+neovim
+pnpm
+ripgrep
+tmux
+tree-sitter
+yarn
+node
+python
+awscli
+go
+slack
+zoxide
