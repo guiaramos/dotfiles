@@ -5,6 +5,7 @@
 !.config/nvim/**/*
 !.config/nvim/lua/config/plugins/**/*
 !.config/tmux/tmux.conf
+!.config/alacritty/alacritty.toml
 !README.md
 !images/*
 !.gitconfig
