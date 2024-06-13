@@ -4,10 +4,10 @@
 !.gitconfig
 !.zshrc
 !brew-apps.txt
+!README.md
 
 !.config/nvim/**/*
 !.config/nvim/lua/config/plugins/**/*
 !.config/tmux/tmux.conf
 !.config/alacritty/alacritty.toml
-!README.md
 

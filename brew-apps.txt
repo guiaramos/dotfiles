@@ -15,3 +15,12 @@ awscli
 go
 slack
 zoxide
+tmuxinator
+bat
+shottr
+alt-tab
+bartender
+tempbox
+dropzone
+cheatsheet
+

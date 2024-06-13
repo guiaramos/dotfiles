@@ -14,7 +14,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -38,6 +38,17 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias ls="eza --color=always --icons=always --long --no-filesize --no-time --no-user --no-permissions"
 
 # ---- Zoxide (better cd) ----
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
-alias cd="z"
+alias c="clear"
+alias e="exit"
+
+alias n="nvim"
+alias t="tmux"
+alias tn="(){tmux new -s $1}"
+alias p="pnpm"
+alias ga="git add ."
+alias gs="git status -s"
+alias gc="(){git commit -m $1}"
+alias cat="bat"
+
