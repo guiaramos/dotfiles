@@ -1,13 +1,13 @@
 *
 
-!.gitignore
-!.gitconfig
-!.zshrc
-!brew-apps.txt
-!README.md
-
+!.config/alacritty/alacritty.toml
+!.config/bat/config
 !.config/nvim/**/*
 !.config/tmux/tmux.conf
-!.config/alacritty/alacritty.toml
+!.gitconfig
+!.gitignore
 !.tmuxifier/layouts/**/*
+!.zshrc
+!README.md
+!brew-apps.txt
 
