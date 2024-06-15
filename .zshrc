@@ -34,21 +34,29 @@ bindkey '^[[B' history-search-forward
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# ---- Eza (better ls) -----
+# exa config
 alias ls="eza --color=always --icons=always --long --no-filesize --no-time --no-user --no-permissions"
 
-# ---- Zoxide (better cd) ----
+# zoxide config
 eval "$(zoxide init --cmd cd zsh)"
 
+# tmuxifier configs
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
+
+# alias
 alias c="clear"
 alias e="exit"
-
 alias n="nvim"
-alias t="tmux"
-alias tn="(){tmux new -s $1}"
 alias p="pnpm"
 alias ga="git add ."
 alias gs="git status -s"
 alias gc="(){git commit -m $1}"
 alias cat="bat"
+
+# tmux alias
+alias t="tmux"
+alias mux="tmuxifier"
+alias tn="(){tmux new -s $1}"
+alias ts="tmuxifier s"
 

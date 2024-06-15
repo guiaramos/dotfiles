@@ -9,4 +9,5 @@
 !.config/nvim/**/*
 !.config/tmux/tmux.conf
 !.config/alacritty/alacritty.toml
+!.tmuxifier/layouts/**/*
 
