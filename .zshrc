@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -49,7 +51,7 @@ alias c="clear"
 alias e="exit"
 alias n="nvim"
 alias p="pnpm"
-alias dk="lazerdocker"
+alias dk="lazydocker"
 alias ga="git add ."
 alias gs="git status -s"
 alias gc="(){git commit -m $1}"
@@ -60,4 +62,8 @@ alias t="tmux"
 alias mux="tmuxifier"
 alias tn="(){tmux new -s $1}"
 alias ts="tmuxifier s"
+alias ta="tmux attach"
+alias tks="tmux kill-session"
 
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

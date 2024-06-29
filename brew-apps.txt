@@ -24,3 +24,7 @@ tempbox
 dropzone
 cheatsheet
 lazydocker
+awscli
+jq
+amazon-q
+httpie
