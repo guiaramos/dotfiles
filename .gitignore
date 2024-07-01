@@ -1,14 +1,14 @@
-*
+/*
 
-!.config/alacritty/alacritty.toml
-!.config/alacritty/catppuccin-mocha.toml
-!.config/bat/config
-!.config/nvim/**/*
-!.config/tmux/tmux.conf
-!.gitconfig
-!.gitignore
-!.tmuxifier/layouts/**/*
-!.zshrc
-!README.md
-!brew-apps.txt
+!/.config/alacritty/alacritty.toml
+!/.config/alacritty/catppuccin-mocha.toml
+!/.config/bat/config
+!/.config/nvim/**/*
+!/.config/tmux/tmux.conf
+!/.gitconfig
+!/.gitignore
+!/.tmuxifier/layouts/**/*
+!/.zshrc
+!/README.md
+!/brew-apps.txt
 

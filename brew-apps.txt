@@ -6,6 +6,7 @@ lazygit
 neovim
 pnpm
 ripgrep
+fd
 tmux
 tree-sitter
 yarn
