@@ -2,6 +2,7 @@
 	name = guiaramos
 	email = gui_aramos@outlook.com 
 [core]
-	editor = vim
+	excludesfile = ~/.gitignore
+	editor = nvim
 [init]
 	defaultBranch = main
