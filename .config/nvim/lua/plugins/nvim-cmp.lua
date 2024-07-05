@@ -1,7 +1,9 @@
 return {
   "hrsh7th/nvim-cmp",
+  dependencies = { "hrsh7th/cmp-emoji" },
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
+    table.insert(opts.sources, { name = "emoji" })
     local has_words_before = function()
       unpack = unpack or table.unpack
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
