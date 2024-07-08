@@ -2,6 +2,11 @@ return {
   { "petertriho/cmp-git", opts = {} },
   {
     "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    dependencies = {
+      "mason.nvim",
+      { "williamboman/mason-lspconfig.nvim", config = function() end },
+    },
     opts = function()
       return {
         -- options for vim.diagnostic.config()
@@ -9,7 +14,14 @@ return {
         diagnostics = {
           underline = true,
           update_in_insert = false,
+          virtual_text = {
+            spacing = 4,
+            source = "if_many",
+          },
           severity_sort = true,
+          signs = {
+            text = {},
+          },
         },
         inlay_hints = {
           enabled = true,
@@ -32,6 +44,46 @@ return {
         format = {
           formatting_options = nil,
           timeout_ms = nil,
+        },
+        -- LSP Server Settings
+        ---@type lspconfig.options
+        servers = {
+          lua_ls = {
+            settings = {
+              Lua = {
+                workspace = {
+                  checkThirdParty = false,
+                },
+                codeLens = {
+                  enable = true,
+                },
+                completion = {
+                  callSnippet = "Replace",
+                },
+                doc = {
+                  privateName = { "^_" },
+                },
+                hint = {
+                  enable = true,
+                  setType = false,
+                  paramType = true,
+                  paramName = "Disable",
+                  semicolon = "Disable",
+                  arrayIndex = "Disable",
+                },
+              },
+            },
+          },
+        },
+        ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+        setup = {
+          -- example to setup with typescript.nvim
+          -- tsserver = function(_, opts)
+          --   require("typescript").setup({ server = opts })
+          --   return true
+          -- end,
+          -- Specify * to use this function as a fallback for any server
+          -- ["*"] = function(server, opts) end,
         },
       }
     end,
@@ -60,6 +112,7 @@ return {
         "pyright",
         "mypy",
         "ruff",
+        "vtsls",
       },
     },
   },
@@ -103,7 +156,7 @@ return {
       keys = {
         {"<leader>t", "", desc = "+test"},
         { "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
-        { "<leader>tT", function() require("neotest").run.run(vim.uv.cwd()) end, desc = "Run All Test Files" },
+        { "<leader>tT", function() require("neotest").run.run(vim.fn.expand "%:p:h") end, desc = "Run All Test Files" },
         { "<leader>tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
         { "<leader>tl", function() require("neotest").run.run_last() end, desc = "Run Last" },
         { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
@@ -177,6 +230,13 @@ return {
     "cappyzawa/telescope-terraform.nvim",
     config = function()
       require("telescope").load_extension "terraform"
+    end,
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {}
+      require("telescope").load_extension "projects"
     end,
   },
 }

@@ -15,9 +15,10 @@ ENABLE_CORRECTION="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+export XDG_CONFIG_HOME="$HOME/.config"
 
-export EDITOR='nvim'
-
+export VISUAL="nvim"
+export EDITOR="nvim"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -45,6 +46,8 @@ eval "$(zoxide init --cmd cd zsh)"
 # tmuxifier configs
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
+
+# alias nvim="nvim --listen /tmp/nvim-server-$(tmux display-message -p '#S-#W-#P').pipe"
 
 # alias
 alias c="clear"

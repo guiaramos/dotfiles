@@ -1,5 +1,40 @@
 return {
   {
+    "b0o/incline.nvim",
+    event = "VeryLazy",
+    config = function()
+      local C = require("catppuccin.palettes").get_palette "mocha"
+      local O = require("catppuccin").options
+      local transparent_background = O.transparent_background
+      local active_bg = transparent_background and "NONE" or C.base
+      local inactive_bg = transparent_background and "NONE" or C.mantle
+      require("incline").setup {
+        highlight = {
+          groups = {
+            InclineNormal = {
+              guibg = active_bg,
+              guifg = C.text,
+            },
+            InclineNormalNC = {
+              guibg = inactive_bg,
+              guifg = C.surface1,
+            },
+          },
+        },
+        window = { margin = { vertical = 0, horizontal = 1 } },
+        hide = { cursorline = true },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if vim.bo[props.buf].modified then
+            filename = "[+] " .. filename
+          end
+          local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+          return { { icon, guifg = color }, { " " }, { filename } }
+        end,
+      }
+    end,
+  },
+  {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
     opts = {
@@ -199,6 +234,7 @@ return {
   {
     "echasnovski/mini.files",
     version = false,
+    event = "BufReadPost",
     opts = {
       windows = {
         preview = true,
@@ -227,7 +263,7 @@ return {
       {
         "<leader>fM",
         function()
-          require("mini.files").open(vim.uv.cwd(), true)
+          require("mini.files").open(vim.fn.expand "%:p:h", true)
         end,
         desc = "Open mini.files (cwd)",
       },
@@ -515,6 +551,7 @@ return {
   },
   {
     "nvim-tree/nvim-tree.lua",
+    event = "VeryLazy",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = function()
       return require "nvchad.configs.nvimtree"
@@ -533,14 +570,13 @@ return {
     dependencies = {
       "nvim-telescope/telescope-file-browser.nvim",
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
     },
     keys = {
       {
         "<leader>fP",
         function()
-          require("telescope.builtin").find_files {
-            cwd = vim.uv.cwd,
-          }
+          require("telescope.builtin").find_files()
         end,
         desc = "Find Plugin File",
       },
@@ -693,6 +729,7 @@ return {
       }
       telescope.setup(opts)
       require("telescope").load_extension "file_browser"
+      require("telescope").load_extension "ui-select"
     end,
   },
   {

@@ -105,10 +105,6 @@ end, { desc = "AI Quick Chat (CopilotChat)" })
 -- Toggle Auto Format
 map("n", "<leader>uf", "<cmd>FormatToggle<CR>", { desc = "Toggle Auto Format (Global)" })
 
--- NvimTree
-map("n", "<leader>fe", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer NvimTree (cwd)" })
-map("n", "<leader>fE", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer NvimTree (Root Dir)" })
-
-map("n", "<leader>e", "<leader>fe", { desc = "Explorer NvimTree (Root Dir)", remap = true })
-map("n", "<C-n>", "<leader>fe", { desc = "Explorer NvimTree (Root Dir)", remap = true })
-map("n", "<leader>E", "<leader>fE", { desc = "Explorer NvimTree (cwd)", remap = true })
+--- nvimtree
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })

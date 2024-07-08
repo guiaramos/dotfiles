@@ -2,6 +2,12 @@ require "nvchad.options"
 
 local opt = vim.opt
 
+local C = require("catppuccin.palettes").get_palette()
+local O = require("catppuccin").options
+
+-- disable mouse
+opt.mouse = ""
+
 opt.autowrite = true -- Enable auto write
 -- only set clipboard if not in ssh, to make sure the OSC 52
 -- integration works automatically. Requires Neovim >= 0.10.0
@@ -78,8 +84,6 @@ vim.cmd [[let &t_Cs = "\e[4:3m"]]
 vim.cmd [[let &t_Ce = "\e[0m"]]
 
 -- notify
-local C = require("catppuccin.palettes").get_palette "mocha"
-local O = require("catppuccin").options
 -- stylua: ignore
 vim.api.nvim_set_hl(0, "NotifyBackground" , { bg = (O.transparent_background and vim.o.winblend == 0) and "#000000" or C.mantle })
 vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = C.red })
@@ -116,6 +120,3 @@ vim.api.nvim_set_hl(0, "NeotestWinSelect", { fg = C.blue })
 vim.api.nvim_set_hl(0, "NeotestMarked", { fg = C.peach })
 vim.api.nvim_set_hl(0, "NeotestTarget", { fg = C.red })
 vim.api.nvim_set_hl(0, "NeotestUnknown", { fg = C.text })
-
--- disable mouse
-opt.mouse = ""
