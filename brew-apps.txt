@@ -29,3 +29,4 @@ awscli
 jq
 amazon-q
 httpie
+luarocks
