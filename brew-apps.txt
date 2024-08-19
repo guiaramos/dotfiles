@@ -30,3 +30,9 @@ jq
 amazon-q
 httpie
 luarocks
+kitty
+yazi
+ffmpegthumbnailer
+unar 
+poppler
+font-symbols-only-nerd-font

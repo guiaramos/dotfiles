@@ -28,3 +28,6 @@
 /.tmuxifier/*
 !/.tmuxifier/layouts/
  
+ !/.config/kitty/
+ /.config/kitty/*
+ !/.config/kitty/kitty.conf

@@ -97,7 +97,7 @@ return {
         desc = "Find Files",
       },
       {
-        ";r",
+        ";g",
         function()
           local builtin = require("telescope.builtin")
           builtin.live_grep()
@@ -166,7 +166,7 @@ return {
             respesct_git = false,
             hidden = true,
             grouped = true,
-            previewer = true,
+            previewer = false,
             initial_mode = "normal",
             layout_config = {
               height = 40,
