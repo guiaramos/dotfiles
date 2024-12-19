@@ -2,11 +2,16 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "monokai-pro",
     },
   },
   {
+    "loctvl842/monokai-pro.nvim",
+    lazy = true,
+  },
+  {
     "catppuccin/nvim",
+    enabled = false,
     lazy = true,
     name = "catppuccin",
     opts = {

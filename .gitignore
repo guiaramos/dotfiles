@@ -18,15 +18,21 @@
 /.config/bat/*
 !/.config/bat/config
 
+!/.config/fd/
+/.config/fd/*
+!/.config/fd/ignore
+
+!/.config/ripgrep/
+/.config/ripgrep/*
+!/.config/ripgrep/ripgreprc
+
 !/.config/tmux/
 /.config/tmux/*
 !/.config/tmux/tmux.conf
 
 !/.config/nvim/
 
-!/.tmuxifier/
 /.tmuxifier/*
-!/.tmuxifier/layouts/
  
  !/.config/kitty/
  /.config/kitty/*

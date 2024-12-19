@@ -36,3 +36,4 @@ ffmpegthumbnailer
 unar 
 poppler
 font-symbols-only-nerd-font
+hub

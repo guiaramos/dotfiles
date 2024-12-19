@@ -59,6 +59,7 @@ alias ga="git add ."
 alias gs="git status -s"
 alias gc="(){git commit -m $1}"
 alias cat="bat"
+alias lg="lazygit"
 
 # tmux alias
 alias t="tmux"
@@ -67,9 +68,6 @@ alias tn="(){tmux new -s $1}"
 alias ts="tmuxifier s"
 alias ta="tmux attach"
 alias tks="tmux kill-session"
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 # enable pyenv
 export PYENV_ROOT="$HOME/.pyenv"
